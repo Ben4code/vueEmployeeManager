@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import firebase from 'firebase';
+import firebase from 'firebase/app';
 import firestore from 'firebase/firestore';
 
 // Initialize Firebase
@@ -14,7 +14,7 @@ var config = {
   const firebaseApp = firebase.initializeApp(config);
   
   //Remove warning
-  //firebaseApp.firestore().settings({timestampsInSnapshots: true})
+  firebaseApp.firestore().settings({timestampsInSnapshots: true})
 
   //Exportfirestore db
   export default firebaseApp.firestore()
